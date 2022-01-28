@@ -103,7 +103,8 @@ object SIOPv2RequestManager {
                         ChallengePolicy(req.nonce!!).apply {
                             applyToVC = false
                         },
-                        VpTokenClaimPolicy(req.claims.vp_token)
+                        VpTokenClaimPolicy(req.claims.vp_token),
+                        EthAddressVerificationPolicy()
                     )
                 )
             },
